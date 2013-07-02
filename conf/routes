@@ -1,0 +1,25 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                        	controllers.Application.main()
+
+POST    /login                   	controllers.Application.authenticate()
+GET     /logout                  	controllers.Application.logout()
+
+#Proxy
+GET	/reverseLookup/:latlon		controllers.NominatimProxy.reverseLookup(latlon)
+GET	/search/:location		controllers.NominatimProxy.search(location)
+
+#Some external callback
+POST    /getResource/:id                controllers.WebCallback.getResource(id: UUIDWrapper)
+
+# Javascript routing
+GET     /javascriptRoutesProxy         	controllers.NominatimProxy.javascriptRoutes()
+
+# Robots.txt handling
+GET     /robots.txt               	controllers.Assets.at(path="/public", file="robots.txt")
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               	controllers.Assets.at(path="/public", file)

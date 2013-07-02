@@ -1,0 +1,9 @@
+# Users
+
+users:
+
+    - !!models.AppUser
+        id:                 1000
+        email:              test@test.com
+        # 'secret'
+        salted_password:    $2a$10$PaO0oL2llDdaToLxOln49OCRFSTzEsyLhMtWbhvy.BehW0.MeTHgS

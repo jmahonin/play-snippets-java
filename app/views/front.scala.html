@@ -1,0 +1,17 @@
+@(loginForm: Form[Application.Login], user: Option[AppUser])
+
+@main(user) {
+    Sign in:
+    @helper.form(action = routes.Application.authenticate, args = 'class -> "login-form") {
+      <fieldset>
+	  @if(loginForm.hasGlobalErrors) {
+	    <span class="error">
+	      @loginForm.globalError.message
+	    </span>
+	  }
+	<input class="text-input" type="email" name="email" placeholder="Email">
+	<input class="text-input" type="password" name="password" placeholder="Password">
+	<input id="signin" class="btn btn-success" type="submit" value="Sign In">
+      </fieldset>
+    }
+  }

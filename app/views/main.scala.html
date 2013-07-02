@@ -1,0 +1,19 @@
+@(user: Option[AppUser])(content: Html)
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="description" content="Some description">
+  <meta name="viewport" content="width=device-width, initial-scale=1">        
+  <title>Some Title</title>
+</head>
+<body>
+  @user match {
+  case Some(u) => {
+    Got user: @u.email
+  }
+  case None => {
+    Not logged in!
+  }
+</body>
+</html>
