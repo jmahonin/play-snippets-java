@@ -1,7 +1,7 @@
 package models;
 
 import java.util.*;
-import java.security.SecureRandom
+import java.security.SecureRandom;
 
 import play.*;
 import play.db.ebean.*;
