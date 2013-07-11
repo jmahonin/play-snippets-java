@@ -1,6 +1,7 @@
 package models;
 
 import java.util.*;
+import java.security.SecureRandom
 
 import play.*;
 import play.db.ebean.*;
@@ -79,7 +80,7 @@ public class AppUser extends Model {
     protected static String randomString( int len ) 
     {
         String AB = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        Random rnd = new Random();
+        SecureRandom rnd = new SecureRandom();
         StringBuilder sb = new StringBuilder( len );
         for( int i = 0; i < len; i++ ) 
             sb.append( AB.charAt( rnd.nextInt(AB.length()) ) );
